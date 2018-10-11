@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using IniParser;
 using IniParser.Model;
+using UnityEngine;
 
 namespace IniConfiguration
 {
@@ -75,6 +76,7 @@ namespace IniConfiguration
             return bValue;
         }
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void LoadAll()
         {
             List<Type> allTypes = new List<Type>();
