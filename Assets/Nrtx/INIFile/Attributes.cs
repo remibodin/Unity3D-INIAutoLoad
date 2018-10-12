@@ -27,6 +27,16 @@ namespace IniConfiguration
         {
 
         }
+
+        public void SetProperty<T>(System.Reflection.PropertyInfo p, T value)
+        {
+            p.SetValue(null, 
+                Convert.ChangeType(
+                    value, 
+                    p.PropertyType, 
+                    System.Globalization.CultureInfo.CurrentCulture), 
+                null);
+        }
         
     } 
 
@@ -42,12 +52,7 @@ namespace IniConfiguration
 
         public override void SetProperty(File file, System.Reflection.PropertyInfo p)
         {
-            p.SetValue(null, 
-                Convert.ChangeType(
-                    file.GetString(section, key, defaultValue), 
-                    p.PropertyType, 
-                    System.Globalization.CultureInfo.CurrentCulture), 
-                null);
+            base.SetProperty<string>(p, file.GetString(section, key, defaultValue));
         }
     }
 
@@ -63,12 +68,7 @@ namespace IniConfiguration
 
         public override void SetProperty(File file, System.Reflection.PropertyInfo p)
         {
-            p.SetValue(null, 
-                Convert.ChangeType(
-                    file.GetInt(section, key, defaultValue), 
-                    p.PropertyType, 
-                    System.Globalization.CultureInfo.CurrentCulture), 
-                null);
+            base.SetProperty<int>(p, file.GetInt(section, key, defaultValue));
         }
     }
 
@@ -84,12 +84,7 @@ namespace IniConfiguration
 
         public override void SetProperty(File file, System.Reflection.PropertyInfo p)
         {
-            p.SetValue(null, 
-                Convert.ChangeType(
-                    file.GetBool(section, key, defaultValue), 
-                    p.PropertyType, 
-                    System.Globalization.CultureInfo.CurrentCulture), 
-                null);
+            base.SetProperty<bool>(p, file.GetBool(section, key, defaultValue));
         }
     }
 }
