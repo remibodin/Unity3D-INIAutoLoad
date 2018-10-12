@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace IniConfiguration
 {
-    public class File
+    public class IniFile
     {
         private IniData _data;
 
-        public File(string filename)
+        public IniFile(string filename)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace IniConfiguration
                 {
                     foreach(ConfigurationFile attr in type.GetCustomAttributes(typeof(ConfigurationFile), false))
                     {
-                        File configFile = new File(attr.filepath);
+                        IniFile configFile = new IniFile(attr.filepath);
                         foreach (var p in type.GetProperties(BindingFlags.Public | BindingFlags.Static))
                         {
                             foreach(Value valueAttr in p.GetCustomAttributes(typeof(Value), false))
