@@ -5,28 +5,49 @@ public class UnitTest
     [Test]
     public static void BoolValue()
     {
-        IniConfiguration.IniFile.LoadAll();
-        Assert.True(ConfigTest.MyBool);
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(ConfigTest.MyBool, true);
     }
 
     [Test]
     public static void IntValue()
     {
-        IniConfiguration.IniFile.LoadAll();
+        IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(ConfigTest.MyInt, 42);
     }
 
     [Test]
     public static void NegIntValue()
     {
-        IniConfiguration.IniFile.LoadAll();
+        IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(ConfigTest.MyNegInt, -42);
     }
 
     [Test]
     public static void StringValue()
     {
-        IniConfiguration.IniFile.LoadAll();
+        IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(ConfigTest.MyString, "String");
+    }
+
+    [Test]
+    public static void BoolDefaultValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(ConfigTest.MyBoolNoDef, false);
+    }
+
+    [Test]
+    public static void IntDefaultValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(ConfigTest.MyIntNoDef, 84);
+    }
+
+    [Test]
+    public static void StringDefaultValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(ConfigTest.MyStringNoDef, "NoDef");
     }
 }

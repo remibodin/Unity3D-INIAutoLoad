@@ -14,4 +14,13 @@ public class ConfigTest
 
     [StringValue("Options", "String", "")]
     public static string MyString {get; private set;}
+
+    [BoolValue("Options", "BoolNoDef", false)]
+    public static bool MyBoolNoDef {get; private set;}
+
+    [IntValue("Options", "IntNoDef", 84)]
+    public static int MyIntNoDef {get; private set;}
+
+    [StringValue("Options", "StringNoDef", "NoDef")]
+    public static string MyStringNoDef {get; private set;}
 }

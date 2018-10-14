@@ -10,9 +10,9 @@
 
         public bool defaultValue;
 
-        public override void SetProperty(IniFile file, System.Reflection.PropertyInfo p)
+        public override void SetProperty(File file, System.Reflection.PropertyInfo p)
         {
-            base.SetProperty<bool>(p, file.GetBool(section, key, defaultValue));
+            ReflectionUtils.SetProperty<bool>(p, file.GetBool(section, key, defaultValue));
         }
     }
 }

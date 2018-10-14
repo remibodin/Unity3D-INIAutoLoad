@@ -21,9 +21,3 @@ Permet de definir des valeurs de configuration via des properties attributes.
         [BoolValue("Section", "Key2", true)]
         public static bool BoolValue { get; private set; }
     }
-
-### Utilisation
-
-    // a appeler une seul fois
-    IniConfiguration.File.LoadAll();
-    Console.Log(Exemple.IntValue);

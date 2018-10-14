@@ -10,9 +10,9 @@
 
         public string defaultValue;
 
-        public override void SetProperty(IniFile file, System.Reflection.PropertyInfo p)
+        public override void SetProperty(File file, System.Reflection.PropertyInfo p)
         {
-            SetProperty<string>(p, file.GetString(section, key, defaultValue));
+            ReflectionUtils.SetProperty<string>(p, file.GetString(section, key, defaultValue));
         }
 	}
 }
