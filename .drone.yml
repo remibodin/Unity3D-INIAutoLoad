@@ -1,0 +1,17 @@
+pipeline:
+  test: 
+    image: registry.remibodin.fr/unity:2018.2.7f1
+    action: test
+  build:
+    image: registry.remibodin.fr/unity:2018.2.7f1
+    action: package
+    package: Assets/Nrtx/INIFile
+    export: Nrtx-IniConfiguration.unitypackage
+  deploy:
+    image: appleboy/drone-scp
+    host: remibodin.fr
+    username: web-deploy
+    secrets: [ ssh_password ]
+    source: Nrtx-IniConfiguration.unitypackage
+    target: /var/www/html/IniConfiguration-release
+    rm: true
