@@ -123,7 +123,7 @@ namespace IniParser.Model
         }
 
 
-		[Obsolete("Do not use this property, use property Comments instead")]
+		// [Obsolete("Do not use this property, use property Comments instead")]
         public List<string> LeadingComments
         {
             get
@@ -153,7 +153,7 @@ namespace IniParser.Model
 
         }
 
-		[Obsolete("Do not use this property, use property Comments instead")]
+		// [Obsolete("Do not use this property, use property Comments instead")]
         public List<string> TrailingComments
         {
             get
