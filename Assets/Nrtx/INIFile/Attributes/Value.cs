@@ -1,6 +1,6 @@
 namespace IniConfiguration
 {
-    public partial class Value : System.Attribute
+    public class Value : System.Attribute
     {
         public Value(string section)
         {
