@@ -50,4 +50,25 @@ public class UnitTest
         IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(ConfigTest.MyStringNoDef, "NoDef");
     }
+
+    [Test]
+    public static void FloatValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(42.0f, ConfigTest.MyFloat);
+    }
+
+    [Test]
+    public static void FloatNegValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(-42.0f, ConfigTest.MyNegFloat);
+    }
+
+    [Test]
+    public static void FloatNoDefValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(42.0f, ConfigTest.MyFloatNoDef);
+    }
 }

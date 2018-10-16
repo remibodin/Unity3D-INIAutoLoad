@@ -12,7 +12,8 @@ namespace IniConfiguration
         {
             {typeof(bool), ParseBool},
             {typeof(int), ParseInt},
-            {typeof(string), ParseString}
+            {typeof(string), ParseString},
+            {typeof(float), ParseFloat}
         };
 
         public static void ParseString(System.Reflection.FieldInfo field, string value)
@@ -35,6 +36,15 @@ namespace IniConfiguration
             if (int.TryParse(value, out iValue))
             {
                 ReflectionUtils.SetField(field, iValue);
+            }
+        }
+
+        public static void ParseFloat(System.Reflection.FieldInfo field, string value)
+        {
+            float fValue;
+            if (float.TryParse(value, out fValue))
+            {
+                ReflectionUtils.SetField(field, fValue);
             }
         }
 

@@ -23,4 +23,13 @@ public class ConfigTest
 
     [Value("Options")]
     public static string MyStringNoDef = "NoDef";
+
+    [Value("Options")]
+    public static float MyFloat = .0f;
+
+    [Value("Options")]
+    public static float MyNegFloat = .0f;
+
+    [Value("Options")]
+    public static float MyFloatNoDef = 42.0f;
 }
