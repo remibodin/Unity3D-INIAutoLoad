@@ -3,24 +3,24 @@ using IniConfiguration;
 [ConfigurationFile("DataTest/config.ini")]
 public class ConfigTest
 {
-    [BoolValue("Options", "Bool", false)]
-    public static bool MyBool {get; private set;}
+    [Value("Options")]
+    public static bool MyBool = false;
 
-    [IntValue("Options", "Int", 0)]
-    public static int MyInt {get; private set;}
+    [Value("Options")]
+    public static int MyInt = 0;
 
-    [IntValue("Options", "NegInt", 0)]
-    public static int MyNegInt {get; private set;}
+    [Value("Options")]
+    public static int MyNegInt = 0;
 
-    [StringValue("Options", "String", "")]
-    public static string MyString {get; private set;}
+    [Value("Options")]
+    public static string MyString = string.Empty;
 
-    [BoolValue("Options", "BoolNoDef", false)]
-    public static bool MyBoolNoDef {get; private set;}
+    [Value("Options")]
+    public static bool MyBoolNoDef = false;
 
-    [IntValue("Options", "IntNoDef", 84)]
-    public static int MyIntNoDef {get; private set;}
+    [Value("Options")]
+    public static int MyIntNoDef = 84;
 
-    [StringValue("Options", "StringNoDef", "NoDef")]
-    public static string MyStringNoDef {get; private set;}
+    [Value("Options")]
+    public static string MyStringNoDef = "NoDef";
 }
