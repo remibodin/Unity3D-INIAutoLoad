@@ -1,35 +1,35 @@
-using IniConfiguration;
+using IniConfiguration.Attributes;
 
-[ConfigurationFile("DataTest/config.ini")]
+[File("DataTest/config.ini")]
 public class ConfigTest
 {
-    [Value("Options")]
+    [Section("Options")]
     public static bool MyBool = false;
 
-    [Value("Options")]
+    [Section("Options")]
     public static int MyInt = 0;
 
-    [Value("Options")]
+    [Section("Options")]
     public static int MyNegInt = 0;
 
-    [Value("Options")]
+    [Section("Options")]
     public static string MyString = string.Empty;
 
-    [Value("Options")]
+    [Section("Options")]
     public static bool MyBoolNoDef = false;
 
-    [Value("Options")]
+    [Section("Options")]
     public static int MyIntNoDef = 84;
 
-    [Value("Options")]
+    [Section("Options")]
     public static string MyStringNoDef = "NoDef";
 
-    [Value("Options")]
+    [Section("Options")]
     public static float MyFloat = .0f;
 
-    [Value("Options")]
+    [Section("Options")]
     public static float MyNegFloat = .0f;
 
-    [Value("Options")]
+    [Section("Options")]
     public static float MyFloatNoDef = 42.0f;
 }

@@ -1,9 +1,9 @@
-namespace IniConfiguration
+namespace IniConfiguration.Attributes
 {
     [System.AttributeUsage(System.AttributeTargets.Class)]
-    public class ConfigurationFile : System.Attribute
+    public class File : System.Attribute
     {
-        public ConfigurationFile(string filepath)
+        public File(string filepath)
         {
             this.filepath = filepath;
         }

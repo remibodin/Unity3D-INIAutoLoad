@@ -5,11 +5,11 @@
 ## HOWTO
 ### Definition
 
-    using IniConfiguration;
+    using IniConfiguration.Attributes;
 
-    [ConfigurationFile("exemple.ini")]
+    [File("exemple.ini")]
     public static class Exemple
     {
-        [Value("Section")]
+        [Section("SectionName")]
         public static int IntValue = 0;
     }

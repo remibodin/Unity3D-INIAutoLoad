@@ -48,16 +48,16 @@ namespace IniConfiguration
             }
         }
 
-        public static void LoadFileValues(ConfigurationFile fileInfos, Type type)
+        public static void LoadFileValues(Attributes.File fileInfos, Type type)
         {
-            File configFile = new File(fileInfos.filepath);
+            File configFile = new IniConfiguration.File(fileInfos.filepath);
             foreach (var field in type.GetFields(BindingFlags.Public | BindingFlags.Static))
             {
-                foreach(Value valueAttr in field.GetCustomAttributes(typeof(Value), false))
+                foreach(Attributes.Section sectionAttr in field.GetCustomAttributes(typeof(Attributes.Section), false))
                 {
                     string sValue;
                     if (_loadValue.ContainsKey(field.FieldType) &&
-                        configFile.TryGetString(valueAttr.section, field.Name, out sValue))
+                        configFile.TryGetString(sectionAttr.name, field.Name, out sValue))
                     {
                         _loadValue[field.FieldType](field, sValue);
                     }
@@ -72,7 +72,7 @@ namespace IniConfiguration
             {
                 foreach (Type type in assembly.GetTypes())
                 {
-                    foreach(ConfigurationFile attr in type.GetCustomAttributes(typeof(ConfigurationFile), false))
+                    foreach(Attributes.File attr in type.GetCustomAttributes(typeof(Attributes.File), false))
                     {
                         LoadFileValues(attr, type);
                     }
