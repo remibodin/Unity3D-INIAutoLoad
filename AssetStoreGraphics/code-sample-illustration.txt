@@ -1,0 +1,33 @@
+=====================================
+Configuration.cs
+=====================================
+using IniConfiguration.Attributes;
+
+[File("configuration.ini")]
+public static class Configuration
+{
+    [Section("Options")]
+    public static bool MyBool = true;
+
+    [Section("Options")]
+    public static int MyInt = 0;
+
+    [Section("Options")]
+    public static float MyFloat = .0f;
+
+    [Section("Options")]
+    public static string MyString = string.Empty;
+}
+=====================================
+
+=====================================
+configuration.ini
+=====================================
+; This file override value of Configuration static class
+
+[Options]
+MyBool=False
+MyInt=42
+MyFloat=-84.0
+MyString=Hello world
+=====================================
