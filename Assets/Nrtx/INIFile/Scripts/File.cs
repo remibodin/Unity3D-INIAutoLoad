@@ -11,8 +11,11 @@ namespace IniConfiguration
         {
             try
             {
-                var parser = new FileIniDataParser();
-                _data = parser.ReadFile(filename);
+                if (System.IO.File.Exists(filename))
+                {
+                    var parser = new FileIniDataParser();
+                    _data = parser.ReadFile(filename);
+                }
             }
             catch(System.Exception e)
             {
