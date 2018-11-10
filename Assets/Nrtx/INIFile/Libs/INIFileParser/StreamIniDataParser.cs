@@ -58,7 +58,7 @@ namespace IniParser
         /// <exception cref="ArgumentNullException">
         ///     Thrown if <paramref name="writer"/> is <c>null</c>.
         /// </exception>
-        public void WriteData(StreamWriter writer, IniData iniData)
+        public static void WriteData(StreamWriter writer, IniData iniData)
         {
             if (iniData == null)
                 throw new ArgumentNullException("iniData");
@@ -78,7 +78,7 @@ namespace IniParser
         /// <exception cref="ArgumentNullException">
         ///     Thrown if <paramref name="writer"/> is <c>null</c>.
         /// </exception>
-        public void WriteData(StreamWriter writer, IniData iniData, IIniDataFormatter formatter)
+        public static void WriteData(StreamWriter writer, IniData iniData, IIniDataFormatter formatter)
         {
             if (formatter == null)
                 throw new ArgumentNullException("formatter");

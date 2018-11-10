@@ -118,7 +118,7 @@ namespace IniParser
         /// <param name="fileEncoding">
         ///     Specifies the encoding used to create the file.
         /// </param>
-        public void WriteFile(string filePath, IniData parsedData, Encoding fileEncoding = null)
+        public static void WriteFile(string filePath, IniData parsedData, Encoding fileEncoding = null)
         {
             // The default value can't be assigned as a default parameter value because it is not
             // a constant expression.
