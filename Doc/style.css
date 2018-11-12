@@ -1,18 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 body {
-    font-size: 11px;
     font-family: 'Lato', sans-serif;
+    letter-spacing: 0.04em;
 }
 
-h1 , h2{
-    color: rgb(55, 82, 235);
-    font-weight: 100;
-}
+h1 , h2{ color: rgb(55, 154, 235); }
 
 h1 { font-size: 2.8em; }
-h2 { font-size: 1.5em; }
+
+h2 { 
+    font-size: 1.5em;
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+
 ul {
     list-style: none;
+    padding: 10px;
+}
+
+pre {
+    background: #eeeeee;
+    border: 0px;
     padding: 10px;
 }
