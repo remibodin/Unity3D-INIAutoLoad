@@ -78,4 +78,18 @@ public class UnitTest
         IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(42, ConfigTest.NotOverrideValue);
     }
+
+    [Test]
+    public static void DoubleValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(84.0, ConfigTest.MyDouble);
+    }
+
+    [Test]
+    public static void CharValue()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual('A', ConfigTest.MyChar);
+    }
 }

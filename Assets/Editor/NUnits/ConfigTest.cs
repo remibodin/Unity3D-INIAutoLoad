@@ -33,5 +33,11 @@ public class ConfigTest
     [Section("Options")]
     public static float MyFloatNoDef = 42.0f;
 
+    [Section("Options")]
+    public static double MyDouble = 0.0;
+
+    [Section("Options")]
+    public static char MyChar = 'c';
+
     public static int NotOverrideValue = 42;
 }
