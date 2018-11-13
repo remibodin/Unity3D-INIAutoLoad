@@ -5,7 +5,9 @@ namespace IniConfiguration
 {
     public class File
     {
-        private IniData _data;
+        private IniData _data = null;
+
+        public bool IsValid { get { return _data != null; } }
 
         public File(string filename)
         {
@@ -25,7 +27,7 @@ namespace IniConfiguration
 
         public bool TryGetString(string section, string key, out string value)
         {
-            if (_data == null)
+            if (IsValid == false)
             {
                 value = null;
             }

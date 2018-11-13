@@ -32,4 +32,6 @@ public class ConfigTest
 
     [Section("Options")]
     public static float MyFloatNoDef = 42.0f;
+
+    public static int NotOverrideValue = 42;
 }

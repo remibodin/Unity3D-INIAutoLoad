@@ -48,13 +48,15 @@ namespace IniConfiguration
             }
         }
 
-        public static void LoadFileValues(Attributes.File fileInfos, Type type)
+        public static void LoadFileValues(File configFile, Type type)
         {
-            File configFile = new IniConfiguration.File(fileInfos.filepath);
             foreach (var field in type.GetFields(BindingFlags.Public | BindingFlags.Static))
             {
-                foreach(Attributes.Section sectionAttr in field.GetCustomAttributes(typeof(Attributes.Section), false))
+                Attributes.Section[] sectionsAttrs = field.GetCustomAttributes(typeof(Attributes.Section), false) as Attributes.Section[];
+                if (sectionsAttrs != null && sectionsAttrs.Length > 0)
                 {
+                    // get last section attribute
+                    Attributes.Section sectionAttr = sectionsAttrs[sectionsAttrs.Length - 1];
                     string sValue;
                     if (_loadValue.ContainsKey(field.FieldType) &&
                         configFile.TryGetString(sectionAttr.name, field.Name, out sValue))
@@ -72,9 +74,16 @@ namespace IniConfiguration
             {
                 foreach (Type type in assembly.GetTypes())
                 {
-                    foreach(Attributes.File attr in type.GetCustomAttributes(typeof(Attributes.File), false))
+                    // get last file attribute
+                    Attributes.File[] fileAttrs = type.GetCustomAttributes(typeof(Attributes.File), false) as Attributes.File[];
+                    if (fileAttrs != null && fileAttrs.Length > 0)
                     {
-                        LoadFileValues(attr, type);
+                        Attributes.File fileAttr = fileAttrs[fileAttrs.Length - 1];
+                        File configFile = new IniConfiguration.File(fileAttr.filepath);
+                        if (configFile.IsValid)
+                        {
+                            LoadFileValues(configFile, type);
+                        }
                     }
                 }
             }

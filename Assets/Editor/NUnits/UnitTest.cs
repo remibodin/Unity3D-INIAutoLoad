@@ -71,4 +71,11 @@ public class UnitTest
         IniConfiguration.LoadAttributes.LoadAll();
         Assert.AreEqual(42.0f, ConfigTest.MyFloatNoDef);
     }
+
+    [Test]
+    public static void StaticWithoutAttribute()
+    {
+        IniConfiguration.LoadAttributes.LoadAll();
+        Assert.AreEqual(42, ConfigTest.NotOverrideValue);
+    }
 }
