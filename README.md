@@ -1,6 +1,6 @@
 # Autoload INI File
 
-- Version:  1.1
+- Version:  1.2
 - Author: [Remi Bodin](https://www.remibodin.fr)
 - Unity AssetStore: [Autoload INI File](https://assetstore.unity.com/packages/slug/130860)
 
