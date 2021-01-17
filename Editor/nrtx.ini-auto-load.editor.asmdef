@@ -1,0 +1,17 @@
+{
+    "name": "nrtx.ini-auto-load.edito",
+    "references": [
+        "GUID:89208bb99556b1e4e8b54a5fccbe7daa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
