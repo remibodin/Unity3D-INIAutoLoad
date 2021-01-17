@@ -1,0 +1,9 @@
+{
+  "name": "com.nrtx.ini-auto-load",
+  "displayName": "INI Auto Load",
+  "version": "1.2.0",
+  "keywords": [],
+  "category": "",
+  "author": "Nrtx",
+  "description": "Store configuration value in INI file and change it after the export with minimum of code."
+}
