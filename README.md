@@ -1,8 +1,8 @@
 # Autoload INI File
 
 - Version:  1.2
-- Author: [Remi Bodin](https://www.remibodin.fr)
-- Unity AssetStore: [Autoload INI File](https://assetstore.unity.com/packages/slug/130860)
+- Author: [Remi Bodin](https://remibodin.github.io/)
+- Unity AssetStore: [Autoload INI File](https://assetstore.unity.com/packages/slug/130860) (:warning: *deprecated*)
 
 ## Usage
 
@@ -61,20 +61,3 @@ public static method attribute
 		...
 		ReflectionUtils.SetField(field, parsedValue);
 	}
-
-## Example
-
-You can find an example in Assets/Nrtx/INIFileExample.
-
-Add **ApplyGlobalConfiguration.cs** in first scene and build your project.
-Now you can create configuration.ini file like 
-
-	[Display]
-	Fullscreen = False
-
-	[Sound]
-	MasterVolume = 0.8
-
-to enable/disable fullscreen mode and change master volume.
-
-**Don't forget to remove Assets/Nrtx/INIFileExample directory before release your project.**
